@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        overflow-y: scroll;
+    }
+
+    div {
+        width: 100%;
+        min-height: 100px;
+    }
+
+    div#c1 {
+        background-color: black;
+        height: 200px;
+    }
+
+    div#c2 {
+        background-color: blue;
+        height: 200px;
+    }
+
+    div#c3 {
+        background-color: cyan;
+        height: 700px;
+    }
+
+    div#c4 {
+        background-color: pink;
+        h
+</style>
+
+<body>
+    <div id="c1" class="component">1</div>
+    <div id="c2" class="component">2</div>
+    <div id="c3" class="component">3</div>
+    <div id="c4" class="component">4</div>
+    <div id="c5" class="component">5</div>
+
+    <script>
+        let components = document.querySelectorAll("div.component");
+
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function shift(element) {
+            let height = getRandomNumber(200, 250);
+            element.style.height = height + "px";
+        }
+
+        function shiftAll() {
+            components.forEach(shift);
+        }
+
+        setTimeout(shiftAll, 400);
+        /* setTimeout(shiftAll, 800);
+        setTimeout(shiftAll, 1200);
+        setTimeout(shiftAll, 1600);
+        setTimeout(shiftAll, 2000); */
+
+    </script>
+</body>
+
+</html>

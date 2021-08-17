@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <script>
+        function _clog(x) {
+            for (let i=0; i< (x * 1000); i++) {
+                console.log('🙊 clogging main thread 🙈 ' + Date.now() * Math.random())
+            }
+        }
+        function longTask() {
+            _clog(10);
+        }
+        function userClick() {
+            _clog(1);
+        }
+        setTimeout(longTask, 0);
+        window.addEventListener('click', userClick)
+    </script>
+<style>
+    /* Box sizing rules */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    div {
+        width: 100%;
+        min-height: 100px;
+    }
+
+    img {
+        width: inherit;
+    }
+
+    img.thumb {
+        width: 25vw;
+    }
+
+    div.grid {
+        display: flex;
+    }
+</style>
+</head>
+
+<body>
+    <div>
+        <!-- <img src="https://res.cloudinary.com/dhfr8kgzr/image/upload/v1575695511/weyes-blood_y3xvvc.jpeg" /> -->
+        <!-- <img src="https://deelay.me/5000/https://res.cloudinary.com/dhfr8kgzr/image/upload/v1575695511/weyes-blood_y3xvvc.jpeg"/> -->
+        <!-- <img src="https://res.cloudinary.com/dhfr8kgzr/image/upload/v1575695511/weyes-blood_y3xvvc.webp"/>   -->
+        <img src="https://res.cloudinary.com/dhfr8kgzr/image/upload/v1575695511/weyes-blood_y3xvvc.avif" />
+
+        <div class="grid">
+            <img class="thumb"
+                src="https://res.cloudinary.com/dhfr8kgzr/image/upload/f_auto,q_auto/v1575695514/hot_spring_livryg.jpg" />
+            <img class="thumb"
+                src="https://res.cloudinary.com/dhfr8kgzr/image/upload/f_auto,q_auto/v1575695510/cate_ib7ucl.jpg" />
+            <img class="thumb"
+                src="https://res.cloudinary.com/dhfr8kgzr/image/upload/f_auto,q_auto/v1544913406/low-double-negative-1536178819-640x640_fkwjhj.jpg" />
+            <img class="thumb"
+                src="https://res.cloudinary.com/dhfr8kgzr/image/upload/f_auto,q_auto/v1544913399/a2395788015_10-1525457717-640x640_opeyaj.jpg" />
+        </div>
+    </div>
+</body>
+
+</html>
